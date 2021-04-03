@@ -1,15 +1,6 @@
-/******************************************
-Treehouse FSJS Techdegree:
-project 1 - A Random Quote Generator
-by Cody Reynolds
-******************************************/
+//Treehouse FSJS Techdegree: project 1 - A Random Quote Generator
+//by Cody Reynolds
 
-// Note: I submitted this assignment targeting Exceeds Expectations.
-// I added in code to:
-//    - Add a new quote property (character)
-//    - Display the values of properties other than quote and source on the page
-//    - Update the quote automatically every 10 seconds
-//    - Change background color with each quote change
 
 /*** 
  * `quotes` array 
@@ -144,14 +135,15 @@ function printQuote() {
  * `randomColorValue` function
 ***/
 
-  // This function uses JavaScript Math methods to obtain three random numbers from 0 to 255 to generate an RGB color value.
+  // This function uses JavaScript Math methods to obtain three random numbers from 0 to 155 to generate an RGB color value.
   // These 3 numbers are concatenated into a string and stored as randomColor.
+  // 155 is used as a maximum so the colors will be darker and provide better contrast to white text.
 
 
 function randomColorValue() {
-  let randomRedValue = Math.floor(Math.random() * 256);
-  let randomGreenValue = Math.floor(Math.random() * 256);
-  let randomBlueValue = Math.floor(Math.random() * 256);
+  let randomRedValue = Math.floor(Math.random() * 156);
+  let randomGreenValue = Math.floor(Math.random() * 156);
+  let randomBlueValue = Math.floor(Math.random() * 156);
   let randomColor = (`${randomRedValue}, ${randomGreenValue}, ${randomBlueValue}`);
   return randomColor;
 }
