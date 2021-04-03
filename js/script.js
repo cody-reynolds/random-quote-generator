@@ -130,6 +130,7 @@ function printQuote() {
   document.body.style.backgroundColor = `rgb(${randomColorValue()})`;
 }
 
+printQuote();
 
 /***
  * `randomColorValue` function
@@ -149,12 +150,26 @@ function randomColorValue() {
 }
 
 
-setInterval(printQuote, 10000); // automatically updates the quote box with a new quote every 10 seconds
-
-
-/***
- * click event listener for the print quote button
- * DO NOT CHANGE THE CODE BELOW!!
-***/
-
+//click event listener for the print quote button
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
+
+
+//Updated countdown timer
+//Thanks to Alex Hipolito (https://github.com/alexhippo) for teaching me this use of setInterval.
+let timeRemaining = 15;
+let quoteButton = document.getElementById('load-quote');
+
+quoteButton.innerHTML = `Show a new quote in ${timeRemaining} seconds`;
+
+function countdown() {
+  if (timeRemaining == 0) {
+  printQuote();
+  timeRemaining = 15;
+  quoteButton.innerHTML = `Show a new quote in ${timeRemaining} seconds`;
+  } else {
+    timeRemaining --;
+    quoteButton.innerHTML = `Show a new quote in ${timeRemaining} seconds`;
+  }
+}
+
+window.setInterval(countdown, 1000);
